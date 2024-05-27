@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>League of Legends</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: rgb(31, 30, 30);
+        width: 99%;
+    }
+    
+    header {
+        background-color: rgb(31, 30, 30);
+        text-align: center;
+        padding: 10px;
+        color: white;
+        font-size: 30px;
+    }
+    
+    main {
+        width: 70vw;
+        margin: auto;
+    }
+    
+    main h3 {
+        text-align: center;
+        color: rgb(167, 167, 167);
+        background-color: rgba(31, 30, 30, 0.815);
+        border-radius: 30px;
+        font-size: 36px;
+    }
+    
+    body>img {
+        width: 100.7%;
+        height: 40vw;
+        margin: 0px;
+        border-style: ridge;
+    }
+    
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+    }
+    
+    .cards>.card {
+        transition: 0.5s;
+        border-radius: 20px;
+        border: 3px solid rgb(105, 106, 105);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        background-color: rgba(31, 30, 30, 0.938);
+    }
+    
+    .cards>.card:hover {
+        transition: 0.5s;
+        transform: scale(1.03);
+        cursor: pointer;
+    }
+    
+    .cards>.card>img {
+        border-radius: 15px 15px 0px 0px;
+        width: 100%;
+    }
+    
+    .cards>.card>div {
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cards>.card>div>p {
+        text-align: center;
+        font-weight: bold;
+        font-size: 30px;
+        /* Променено на по-голям размер на шрифта */
+        padding: 20px;
+        margin: 0px;
+        color: rgb(37, 97, 165);
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .cards>.card>div>span {
+        text-align: center;
+        font-size: 20px;
+        padding: 20px;
+        margin: 0px;
+        color: rgb(192, 192, 192);
+    }
+    
+    .image {
+        display: grid;
+        grid-template-columns: 50.5% 50.5%;
+    }
+    
+    .image>img {
+        width: 100%;
+        height: 600px;
+    }
+    
+    .footer {
+        height: 90px;
+        background-color: rgb(31, 30, 30);
+        text-align: center;
+        padding-top: 50px;
+        color: rgb(158, 158, 158);
+        font-size: 30px;
+    }
+    
+    .prev,
+    .next {
+        background-color: rgba(31, 30, 30, 0.938);
+        cursor: pointer;
+        width: 100px;
+        /* Adjust the width as needed */
+        height: 30px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        user-select: none;
+        -webkit-user-select: none;
+        text-align: center;
+    }
+    
+    .prev {
+        position: absolute;
+        left: 4%;
+        top: 175%;
+        margin-top: -15px;
+        /* Half of the height to center vertically */
+    }
+    
+    .next {
+        position: absolute;
+        right: 4%;
+        top: 175%;
+        margin-top: -15px;
+        /* Half of the height to center vertically */
+    }
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.637);
+    }
+    
+    .champs {
+        width: 101%;
+        margin-top: -2%;
+        padding-top: 5%;
+        padding-bottom: 10%;
+        background-image: url("https://cdnb.artstation.com/p/assets/images/images/023/060/007/large/max-cederroth-runeterra-k.jpg?1577936316");
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .dot-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        margin-top: 30px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        cursor: pointer;
+    }
+    
+    .dot.active {
+        background-color: #6b6b6b;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .cards {
+            grid-template-columns: auto;
+        }
+        .image {
+            grid-template-columns: auto;
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <img onclick="openFile('Liga.html')" src="https://oyster.ignimgs.com/mediawiki/apis.ign.com/league-of-legends/8/86/League_of_legends_logo_transparent.png?width=640" style="width: 190px; height: 80px; cursor: pointer;">
+    </header>
+
+    <img src="https://nexus.leagueoflegends.com/wp-content/uploads/2016/11/LOL_CMS_19_Article_03.jpg">
+
+    <div class="champs">
+
+        <main>
+
+            <h3>Champions</h3>
+
+            <div class="cards">
+                <div class="card" onclick="openFile('jhin.html')">
+                    <img src="https://liquipedia.net/commons/images/b/b9/League_Infobox_Jhin.jpg">
+                    <div>
+                        <p>Jhin</p>
+                        <span>Jhin is a meticulous criminal psychopath who believes murder is art. Once an Ionian prisoner, but freed by shadowy elements within Ionia’s ruling council, the serial killer now works as their cabal's assassin. Using his gun as his paintbrush, Jhin creates works of artistic brutality, horrifying victims and onlookers. He gains a cruel pleasure from putting on his gruesome theater, making him the ideal choice to send the most powerful of messages: terror.
+                         </span>
+                    </div>
+
+                </div>
+
+                <div class="card" onclick="openFile('nasus.html')">
+                    <img src="https://liquipedia.net/commons/images/3/38/League_Infobox_Nasus.jpg">
+
+                    <div>
+                        <p>Nasus</p>
+                        <span>Nasus is an imposing, jackal-headed Ascended—those heroic and god-like figures once revered by the people of Shurima. Fiercely intelligent, he was a guardian of knowledge and peerless strategist whose wisdom guided the empire to greatness for many centuries. After the failed Ascension of Azir, Nasus went into self-imposed exile, becoming little more than a legend. Now that the Sun Disc has risen once more, he has returned, determined to ensure it never falls again.</span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openFile('ori.html')">
+                    <img src="https://liquipedia.net/commons/images/a/a2/League_Infobox_Orianna.jpg">
+
+                    <div>
+                        <p>Orianna</p>
+                        <span>Once a curious girl of flesh and blood, Orianna is now a technological marvel composed entirely of clockwork. She became gravely ill after an accident in the lower districts of Zaun, and her failing body had to be replaced with exquisite artifice, piece by piece. Accompanied by the extraordinary brass orb that houses her hextech arsenal, Orianna is now free to explore the wonders of Piltover, and beyond.</span>
+                    </div>
+                </div>
+                <div class="card" onclick="openFile('sett.html')">
+                    <img src="https://liquipedia.net/commons/images/e/e8/Sett_0.jpg">
+
+                    <div>
+                        <p>Sett</p>
+                        <span>Aleader of Ionia’s growing criminal underworld, Sett rose to prominence in the wake of the war with Noxus. Though he began as a humble challenger in the fighting pits of Navori, he quickly gained notoriety for his savage strength, and his ability to take seemingly endless amounts of punishment. Now, having climbed through the ranks of local combatants, Sett has muscled to the top, reigning over the pits he once fought in.
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openFile('ekko.html')">
+                    <img src="https://liquipedia.net/commons/images/3/37/League_Infobox_Ekko.jpg">
+
+                    <div>
+                        <p>Ekko</p>
+                        <span>Aprodigy from the rough streets of Zaun, Ekko manipulates time to twist any situation to his advantage. Using his own invention, the Z-Drive, he explores the branching possibilities of reality to craft the perfect moment. Though he revels in this freedom, when there’s a threat to his friends, he’ll do anything to defend them. To outsiders, Ekko seems to achieve the impossible the first time, every time.</span>
+                    </div>
+                </div>
+
+                <div class="card" onclick="openFile('fiddle.html')">
+                    <img src="https://liquipedia.net/commons/images/8/8b/League_Infobox_Fiddlesticks_2020.jpg">
+
+                    <div>
+                        <p>Fiddlesticks</p>
+                        <span>Something has awoken in Runeterra. Something ancient. Something terrible. The ageless horror known as Fiddlesticks stalks the edges of mortal society, drawn to areas thick with paranoia where it feeds upon terrorized victims. Wielding a jagged scythe, the haggard, makeshift creature reaps fear itself, shattering the minds of those unlucky enough to survive in its wake. Beware the sounding of the crow, or the whispering of the shape that appears almost human… Fiddlesticks has returned.</span>
+                    </div>
+                </div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+        </main>
+    </div>
+
+    <div class="image">
+        <img src="https://www.pcgamesn.com/wp-content/sites/pcgamesn/legacy/league_of_legends_lore_changes.jpg" alt="">
+        <img src="https://assetsio.reedpopcdn.com/league-of-legends-reboots-its-lore-1409883954814.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp" alt="">
+    </div>
+
+    <footer class="footer">Aleksandar Sergiev 12v №5</footer>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            var newIndex = slideIndex + n;
+            if (newIndex <= 4 && newIndex >= 1) {
+                showSlides(slideIndex += n);
+            }
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("card");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+
+            // Display 3 slides at a time
+            for (i = n - 1; i < n + 2; i++) {
+                let indexToShow = 3;
+                slides[i].style.display = "block";
+            }
+            dots[slideIndex - 1].classList.add("active");
+            var prevLink = document.querySelector(".prev");
+            prevLink.style.display = (slideIndex === 1) ? "none" : "block";
+            var nextLink = document.querySelector(".next");
+            nextLink.style.display = (slideIndex === 4) ? "none" : "block";
+        }
+
+        function openFile(filename) {
+            window.open(filename, '_self');
+        }
+    </script>
+
+</body>
+
+</html>
